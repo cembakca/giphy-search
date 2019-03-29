@@ -1,8 +1,14 @@
 <template>
   <div id="app">
+    <h3>Giphy | Choose Your Favorite Gif!</h3>
     <search v-on:searchrequested="handleSearch" ></search>
     <p v-if="isLoading">loading</p>
-    <preview v-bind:gifs="gifs"></preview>
+    <preview
+      v-on:savegif="saveGif"
+      v-on:deletegif="deleteGif"
+      v-bind:gifs="gifs"
+      v-bind:saved="saved"
+    ></preview>
   </div>
 </template>
 
@@ -18,7 +24,8 @@ export default {
   data() {
     return {
       isLoading: true,
-      gifs: []
+      gifs: [],
+      saved: []
     }
   },
   methods: {
@@ -35,6 +42,12 @@ export default {
       this.isLoading = true;
       const url = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}`;
       this.doQuery(url);
+    },
+    saveGif(idx) {
+      this.saved.push(this.gifs[idx]);
+    },
+    deleteGif(idx) {
+      this.saved.splice(idx, 1);
     }
   },
   created() {

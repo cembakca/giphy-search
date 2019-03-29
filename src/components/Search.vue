@@ -28,8 +28,8 @@ export default {
   }
 
   .input {
-    width: 310px;
-    height: 50px;
+    width: 500px;
+    height: 30px;
     padding: 0 15px;
     margin-right: 20px;
     font-size: 16px;
@@ -48,7 +48,7 @@ export default {
 
   .btn {
     display: inline-block;
-    height: 50px;
+    height: 30px;
     padding: 0 20px;
     color: #ffffff;
     text-align: center;
