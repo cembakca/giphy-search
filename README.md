@@ -1,5 +1,7 @@
 # giphy-search
 
+## Giphy | Choose Your Favorite Gif!
+
 > 
 
 ## Build Setup
